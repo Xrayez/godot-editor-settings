@@ -1,0 +1,79 @@
+[gd_resource type="EditorSettings" load_steps=6 format=2]
+
+[sub_resource type="InputEventKey" id=6]
+scancode = 16777245
+
+[sub_resource type="InputEventKey" id=7]
+scancode = 16777246
+
+[sub_resource type="InputEventKey" id=5]
+scancode = 16777244
+
+[sub_resource type="InputEventKey" id=8]
+scancode = 16777247
+
+[sub_resource type="InputEventKey" id=4]
+scancode = 16777224
+
+[resource]
+; Make the editor slightly compact without sacrificing readability.
+interface/editor/main_font_size = 13 ; Default: 14
+
+; Don't ask if I really want to quit.
+; Most stuff is saved automatically or on quit anyways.
+interface/editor/quit_confirmation = false ; Default: true
+
+; This sets up some decent dark background as base.
+; Looks good with the VS-Code-Dark text editor theme below.
+interface/theme/preset = "Custom"
+interface/theme/base_color = Color( 0.18, 0.18, 0.18, 1 )
+interface/theme/accent_color = Color( 0.37, 0.57, 0.8, 1 )
+interface/theme/contrast = 0.3 ; Default: 0.25
+
+; See https://github.com/godotengine/godot-syntax-themes.
+text_editor/theme/color_theme = "VS-Code-Dark"
+
+; I feel like increasing line spacing avoids 
+; having to insert empty lines for readability.
+text_editor/theme/line_spacing = 8 ; Default: 6
+
+; I like to have some freedom having extra space when 
+; writing text past the end of file. 
+text_editor/cursor/scroll_past_end_of_file = true
+text_editor/files/trim_trailing_whitespace_on_save = true
+
+; The default caret blink speed is a bit fast for me, increased to make it more
+; soothing, but not to the point of making it feel unresponsive.
+text_editor/cursor/caret_blink_speed = 0.65 ; Default: 0.5.
+
+; It's better to recieve script parse errors instantly instead of hitting F5
+; and getting an error at run-time anyway.
+text_editor/completion/idle_parse_delay = 0.1 ; Default: 2 seconds
+
+; Force fullscreen, next monitor.
+run/window_placement/rect = 4
+run/window_placement/screen = 2
+
+; Productivity booster, but may affect editor startup times.
+; But I find myself re-opening the same scenes anyway.
+interface/scene_tabs/restore_scenes_on_load = true
+
+; Similar to scenes, but I don't see it being useful to see scripts from 
+; previous sessions, especially when the scripts themselves are attached to 
+; scenes which are restored on load as above.
+;
+; This also overcomes quite serious startup performance issue if you have lots
+; of scripts opened there: https://github.com/godotengine/godot/issues/39841
+text_editor/files/restore_scripts_on_load = false
+
+; I don't like auto script switch because I'm not certain what script I might
+; be looking for when switching between scene tabs.
+text_editor/files/open_dominant_script_on_scene_change = false
+
+; Shortcuts:
+;     F1 - search help. Default: Shift + F1.
+;     F2 - 2D editor. Default: F1.
+;     F3 = 3D editor. Default: F2.
+;     F4 - script editor. Default: None (?)
+;     "scene_tree/delete node" is remapped to work as "scene_tree/delete_no_confirm".
+shortcuts = [ "editor/editor_2d", SubResource( 6 ), "editor/editor_3d", SubResource( 7 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 8 ), "scene_tree/delete", null, "scene_tree/delete_no_confirm", SubResource( 4 ) ]
