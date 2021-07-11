@@ -28,7 +28,7 @@ interface/editor/quit_confirmation = false ; Default: true
 interface/theme/preset = "Custom"
 interface/theme/base_color = Color( 0.18, 0.18, 0.18, 1 )
 interface/theme/accent_color = Color( 0.37, 0.57, 0.8, 1 )
-interface/theme/contrast = 0.3 ; Default: 0.25
+interface/theme/contrast = 0.31 ; Default: 0.25
 
 ; See https://github.com/godotengine/godot-syntax-themes.
 text_editor/theme/color_theme = "VS-Code-Dark"
