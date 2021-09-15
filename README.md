@@ -32,10 +32,3 @@ editor settings directly via GUI.
 
 If you copy the editor settings file as-is, make sure to reset 
 `text_editor/theme/color_theme` as the editor might not pick it up correctly.
-
-## License
-
-Copyright (C) 2020 Andrii Doroshenko.
-
-Unless otherwise specified, files in this repository are licensed under CC0 1.0
-Universal, see LICENSE.md for more information.
